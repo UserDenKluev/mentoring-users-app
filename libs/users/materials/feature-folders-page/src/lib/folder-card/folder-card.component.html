@@ -1,0 +1,18 @@
+<mat-card class="example-card" appearance="outlined" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+  <mat-card-header>
+    <div class="content">
+      <div class="content__top">
+        <div>
+          <mat-icon>folder</mat-icon>
+        </div>
+        <div class="delete-icon">
+          <mat-icon *ngIf="isVisible" (click)="deleteFolder.emit(dataFolder)">delete</mat-icon>
+        </div>
+      </div>
+      <div class="content__bottom">
+        <mat-card-title>{{ dataFolder.title }}</mat-card-title>
+        <mat-card-subtitle>{{ transformMillisecondsInDate(dataFolder.created_at) | date: 'dd MMM yyyy' : '': 'ru' }}</mat-card-subtitle>
+      </div>
+    </div>
+  </mat-card-header>
+</mat-card>

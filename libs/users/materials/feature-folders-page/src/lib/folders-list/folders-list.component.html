@@ -1,0 +1,4 @@
+<div class="container">
+  <users-folder-card *ngFor="let folder of allFolders$ | async" [dataFolder]="folder"
+                     (deleteFolder)="deleteFolder.emit($event)" />
+</div>

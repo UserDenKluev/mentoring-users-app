@@ -12,15 +12,15 @@ export type UsersErrors = {
   [key: string]: unknown;
 };
 
+export interface UsersFilter {
+  name: string;
+}
+
 export interface UsersState extends EntityState<UsersEntity> {
   selectedId?: string | number; // which Users record has been selected
   usersFilter: UsersFilter;
   status: LoadingStatus;
   error: UsersErrors | null;
-}
-
-export interface UsersFilter {
-  name: string;
 }
 
 export interface UsersPartialState {

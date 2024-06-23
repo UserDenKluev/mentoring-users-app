@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Подтверждение</h1>
+<div mat-dialog-content>
+  Вы уверены, что хотите удалить {{ data.folderData.title }}
+</div>
+<div mat-dialog-actions class="bottom">
+  <button mat-icon-button (click)="save()">
+    <mat-icon>check</mat-icon>
+  </button>
+  <button mat-icon-button (click)="cancel()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

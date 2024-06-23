@@ -8,14 +8,21 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/users",
         "index": "apps/users/src/index.html",
         "main": "apps/users/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/users/tsconfig.app.json",
-        "assets": ["apps/users/src/favicon.ico", "apps/users/src/assets"],
+        "assets": [
+          "apps/users/src/favicon.ico",
+          "apps/users/src/assets"
+        ],
         "styles": [
           "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
           "./node_modules/quill/dist/quill.core.css",
@@ -57,13 +64,19 @@
             "inject": false,
             "bundleName": "custom-theme"
           },
-          { "input": "apps/users/src/app-theme.scss" },
+          {
+            "input": "apps/users/src/app-theme.scss"
+          },
           "@angular/material/prebuilt-themes/deeppurple-amber.css"
         ],
         "stylePreprocessorOptions": {
-          "includePaths": ["libs/users/settings"]
+          "includePaths": [
+            "libs/users/settings"
+          ]
         },
-        "scripts": ["./node_modules/quill/dist/quill.min.js"]
+        "scripts": [
+          "./node_modules/quill/dist/quill.min.js"
+        ]
       },
       "configurations": {
         "production": {
@@ -118,14 +131,21 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/users/**/*.ts", "apps/users/**/*.html"]
+        "lintFilePatterns": [
+          "apps/users/**/*.ts",
+          "apps/users/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/users/jest.config.ts",
         "passWithNoTests": true
@@ -144,7 +164,9 @@
       }
     },
     "docker-build": {
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "command": "docker build -f apps/users/Dockerfile . -t users"
     }
   }
